@@ -1,0 +1,58 @@
+@import "main.css";
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    
+    color: white;
+    padding: var(--pad-y) calc(2 * var(--pad-x));
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+p {
+    font-size: 1.5rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    font-size: 1.5rem;
+    width: 50vw;
+}
+
+form > input {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.5em;
+}
+
+form > input[type="submit"] {
+    border-radius: var(--border-radius);
+    background-color: var(--card-color);
+    color: white;
+    font-size: 1.25em;
+}
+
+label {
+    display: block;
+    text-align: left;
+}
+
+@media (max-width: 1000px) {
+    form {
+        width: 80dvw;
+    }
+    
+    /* Disable this current page's navbar entry */
+    header > nav > a:nth-child(5) {
+        display: none;
+    }
+}

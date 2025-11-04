@@ -39,7 +39,6 @@ article p {
 
 article a {
     text-decoration: none;
-    font-style: italic;
     color: var(--link-color);
 }
 

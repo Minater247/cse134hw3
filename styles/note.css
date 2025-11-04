@@ -1,0 +1,16 @@
+@import "main.css";
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: center;
+
+    color: white;
+
+    padding: var(--pad-y) calc(2 * var(--pad-x));
+}
+
+dialog {
+    all: revert;
+}

@@ -1,0 +1,42 @@
+@import "main.css";
+
+main {
+    color: white;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+#hero p {
+    font-size: 1.5rem;
+}
+
+
+h2 {
+    font-size: 2rem;
+}
+
+#cv p {
+    font-size: 1.4em;
+}
+
+
+
+
+@media (max-width: 1000px) {
+    section {
+        text-align: center;
+    }
+
+    /* Disable this current page's navbar entry */
+    header > nav > a:nth-child(4) {
+        display: none;
+    }
+}
