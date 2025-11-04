@@ -14,4 +14,9 @@ main {
 main > a {
     color: var(--link-color);
     text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+main > a:hover {
+    color: var(--link-color-hover);
 }

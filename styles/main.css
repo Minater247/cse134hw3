@@ -93,7 +93,13 @@ footer a {
     border: 2px solid #21212e;
 
     padding: calc(var(--pad-y) / 2) var(--pad-x);
-    border-radius: var(--border-radius)
+    border-radius: var(--border-radius);
+    
+    transition: color 0.25s ease;
+}
+
+footer a:hover {
+    color: var(--link-color-hover);
 }
 
 footer nav {
