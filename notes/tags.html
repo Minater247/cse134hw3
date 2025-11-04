@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>Tags I Needed T...</title>
+    <meta charset="utf-8">
+
+    <style>
+        grey-bg {
+            background-color: grey;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="/index.html">Home</a>
+            <a href="/projects.html">Projects</a>
+            <a href="/notes.html">Articles</a>
+            <a href="/about.html">About</a>
+            <a href="/contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Tags I Needed to Use For This Assignment</h1>
+
+        <hr>
+
+        <small>No relevant GitHub link is necessary for this article.</small>
+
+        <h2>Outline</h2>
+        <ol>
+            <li>Span and Div</li>
+            <li>Dialog</li>
+            <li>Fieldset and Legend</li>
+            <li>Progress</li>
+            <li>SVG</li>
+            <li>hello-world</li>
+        </ol>
+
+        <h2>Span and Div</h2>
+        <p>I didn't have a need for them anywhere. I might need them once
+            we start styling, but nothing pure-HTML needed them. They don't
+            mean anything. Nonetheless, here is a <code>div</code>
+            containing a <code>span</code>.
+        </p>
+        <div><span>This text is inside a span, inside of a div! Wow!</span></div>
+        <p>
+            So, what did that do? Div is a block element, so it stepped below the
+            paragraph preceding it. It then says nothing about what it contains
+            and steps into the span, which does nothing (as an inline element)
+            and steps down to the text contained.
+        </p>
+
+        <h2>Dialog</h2>
+        <p>Not particularly useful until JavaScript is allowed, so I pulled it out
+            to this article instead. You can close this one.</p>
+        <dialog open>
+            <p>Hello. I am a dialog. You can close me. I'm probabily covering some text, but I can't start closed and
+                open without Javascript.</p>
+            <form method="dialog">
+                <button>OK</button>
+            </form>
+        </dialog>
+        <p>This also uses the button tag without any Javascript, which is cool!</p>
+
+        <h2>Fieldset and Legend</h2>
+        <p>These could have been useful in my contact form, but there's not
+            enough groups for them to be useful, and the HTML validator complained. Thus,
+            I moved them over here. The labels work well enough.
+        </p>
+        <form>
+            <fieldset>
+                <legend>Choose your favorite Diagram</legend>
+
+                <input type="radio" id="venn" name="favdiag">
+                <label for="venn">Venn Diagram</label>
+                <br>
+
+                <input type="radio" id="flow" name="favdiag">
+                <label for="flow">Flowchart</label>
+                <br>
+
+                <input type="radio" id="bar" name="favdiag">
+                <label for="bar">Bar Chart</label>
+            </fieldset>
+        </form>
+
+        <h2>Progress</h2>
+        <p>Nowhere I have in my site needs any kind of progress bar.
+            Here's one that's set to an indeterminate percent. It bounces in
+            Firefox.
+        </p>
+        <progress></progress>
+
+        <h2>SVG</h2>
+        <svg width="220" height="120" viewBox="0 10 220 130" role="img" aria-labelledby="vennTitle vennDesc">
+            <title id="vennTitle">Venn diagram of three sets</title>
+            <desc id="vennDesc">Three overlapping colored circles.</desc>
+            <g fill-opacity="0.4">
+                <circle cx="80" cy="60" r="45" fill="#ff6b6b" />
+                <circle cx="110" cy="60" r="45" fill="#51cf66" />
+                <circle cx="95" cy="80" r="45" fill="#339af0" />
+            </g>
+        </svg>
+        <p>Basic SVG tag with all the attributes to make it validate. It's the Venn Diagram of 3 sets.</p>
+
+        <h2>hello-world</h2>
+        <hello-world></hello-world>
+        <p>This is a custom tag, defined in the first section. If you're reading this, you should see this in your
+            console:</p>
+        <blockquote>Hello, World!</blockquote>
+        <p>(no, that one wasn't written from JS, don't dock me. I just wanted to use blockquote.)</p>
+
+        <h2>grey-bg</h2>
+        <p>This one makes its background grey. I have a few places custom elements would be useful, but all of them
+            would replace another required tag such as <code>&lt;article&gt;</code>, so I didn't use them.</p>
+        <grey-bg>
+            Nice. This has a grey background. The custom CSS element works fine.
+        </grey-bg>
+
+        <h2>Extra Credit Stuff</h2>
+        <p>MathML is interesting, although I'll likely be mostly using it in the LaTeX mode as I'm familiar with the
+            language. Here's the equation:</p>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>E</mi>
+            <mo>=</mo>
+            <mi>m</mi>
+            <msup>
+                <mi>c</mi>
+                <mn>2</mn>
+            </msup>
+        </math>
+        <br>
+        <br><!-- Yes double br, we don't get CSS. I want my margin. -->
+        <p>We could use it if we target modern browsers - it is marked baseline available, not even recently baseline
+            available. I'm guessing this question is an older one. However, the likely reason would be (as of 2 years
+            ago or earlier) that the implementation was not yet widely implemented across all modern browsers, and would
+            cause the site to break for some users if used. Even as of last year, it would have only been recently
+            available, so today it likely still has a few holdouts on older browser versions who may not have the
+            feature. This is the only reason for base MathML I see any issues with.</p>
+    </main>
+
+    <footer>
+        <h2>Nathan Reed</h2>
+        <nav>
+            <a href="/index.html">Home</a>
+            <a href="/projects.html">Projects</a>
+            <a href="/notes.html">Articles</a>
+            <a href="/about.html">About</a>
+            <a href="/contact.html">Contact</a>
+        </nav>
+        <hr>
+        <nav>
+            <a href="instagram.com">Instagram</a>
+            <a href="linkedin.com">Linkedin</a>
+        </nav>
+        <small>&copy; Nathan Reed, 2025</small>
+    </footer>
+
+    <script>
+        class HelloWorld extends HTMLElement {
+            connectedCallback() {
+                if (this._logged) return;
+                this._logged = true;
+                console.log("Hello world!");
+            }
+        }
+        customElements.define('hello-world', HelloWorld)
+    </script>
+</body>
+
+</html>

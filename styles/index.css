@@ -1,0 +1,230 @@
+@import "main.css";
+
+h2 {
+    font-size: 2rem;
+}
+
+ul {
+    list-style-type: none;
+}
+
+
+
+
+#hero {
+    display: flex;
+    color: white;
+}
+
+#hero img {
+    flex: 1 1 40%;
+    padding: var(--pad-y) var(--pad-x);
+}
+
+#hero div {
+    flex: 2 1 60%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: var(--pad-y) var(--pad-x);
+
+    justify-content: center;
+}
+
+#hero nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+#hero a {
+    display: block;
+    padding: 0.8rem 2rem;
+
+    background-color: transparent;
+
+    border: 2px solid #313240;
+    border-radius: var(--border-radius);
+
+    color: white;
+    text-decoration: none;
+    font-size: 1.6rem;
+}
+
+#hero a:first-of-type {
+    background-color: #574e93;
+    border: 2px solid #6c6abe;
+}
+
+#hero h1 {
+    font-size: 4.75rem;
+}
+
+#hero p {
+    font-size: 2rem;
+}
+
+#hero hr {
+    display: none;
+}
+
+
+
+
+
+
+main > div {
+    display: flex;
+}
+
+main > div > section:first-of-type {
+    padding-right: 0;
+}
+
+#skills {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    flex: 1 1 40%;
+    color: white;
+}
+
+#skills ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#skills h3 {
+    font-size: 1.8rem;
+}
+
+#skills p {
+    color: #cbcbce;
+    font-size: 1.3rem;
+}
+
+#skills a {
+    text-decoration: none;
+    color: var(--link-color);
+    font-size: 1.25rem;
+}
+
+#skills a:hover {
+    color: var(--link-color-hover);
+}
+
+
+
+
+#featured {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    
+    flex: 2 1 60%;
+    color: white;
+}
+
+#featured img {
+    float: left;
+    margin: 0 .75rem .5rem 0;
+    width: 35%;
+    aspect-ratio: 1;
+    border-radius: var(--border-radius);
+}
+
+#featured ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+#featured .card {
+    display: flow-root;
+}
+
+#featured a {
+    text-decoration: none;
+    color: var(--link-color);
+}
+
+#featured a:hover {
+    color: var(--link-color-hover);
+}
+
+#featured li a:first-of-type {
+    font-size: 1.3rem;
+}
+
+#featured h3 {
+    font-size: 1.3rem;
+}
+
+#featured p {
+    font-size: 1.2rem;
+}
+
+#featured li a:last-of-type {
+    font-size: 1.2rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1000px) {
+    #hero {
+        text-align: center;
+    }
+    
+    #hero img {
+        display: none;
+    }
+
+    #hero nav {
+        flex-direction: column;
+    }
+
+    #hero div {
+        gap: 2rem;
+    }
+
+
+    main > div {
+        flex-direction: column;
+    }
+
+    main > div > section {
+        flex: 1 1 100%;
+    }
+
+    main > div > section:first-of-type {
+        padding-right: calc(2 *var(--pad-x));
+    }
+
+
+    /* Disable this current page's navbar entry */
+    header > nav > a:nth-child(1) {
+        display: none;
+    }
+}
+
+
+
+@media (max-width: 800px) {
+    #featured ul {
+        grid-template-columns: 1fr;
+    }
+}

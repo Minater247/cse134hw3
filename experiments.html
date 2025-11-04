@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>Site Title</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="/index.html">Home</a>
+            <a href="/projects.html">Projects</a>
+            <a href="/notes.html">Articles</a>
+            <a href="/about.html">About</a>
+            <a href="/contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Page Title</h1>
+
+        <hr>
+
+        <!-- A lot you can do with 11 lines :) -->
+        <!-- logic: https://lodev.org/cgtutor/plasma.html -->
+        <h2>Canvas</h2>
+        <canvas id=c></canvas>
+        <script>
+            let c = document.querySelector('#c'), g = c.getContext('2d'), W = 96, H = 40, t = 0, S = " .:-=+*#%@"
+            let cw = 8, ch = 12; c.width = W * cw; c.height = H * ch; g.font = ch + "px monospace"; g.textBaseline = "top"
+            let P = ["#f38ba8", "#fab387", "#f9e2af", "#a6e3a1", "#94e2d5", "#74c7ec", "#89b4fa", "#cba6f7"]
+            function R() {
+                t += .008; g.fillStyle = "#1e1e2e"; g.fillRect(0, 0, c.width, c.height)
+                for (let y = 0; y < H; y++)for (let x = 0; x < W; x++) {
+                    let d = Math.hypot(x - W / 2, y - H / 2), q = (Math.sin(x * .20 + t) + Math.sin(y * .20 - t)
+                        + Math.sin((x + y) * .10 + t) + Math.sin(d * .15 - t) + 4) / 8
+                    g.fillStyle = P[(q * (P.length - 1)) | 0]; g.fillText(S[(q * 9) | 0], x * cw, y * ch)
+                }
+                requestAnimationFrame(R)
+            }
+            R()
+        </script>
+        <p>This effect is great because it requires so little code and is so computationally simple given
+            sin/cos tables that you could run it on late 80s/early 90s hardware and it would impress folks.</p>
+
+        <h2>Picture</h2>
+        <picture>
+            <source srcset="/temporary_media.jpg" media="(orientation: portrait)">
+            <img src="/temporary_media.jpg" alt="Placeholder Surfer">
+        </picture>
+        <p><code>&lt;picture&gt;</code> was already required for the main portion, so I don't know why I also need it here.</p>
+
+        <h2>Audio</h2>
+        <audio controls src="/nujabes.mp3"></audio>
+
+        <h2>Video</h2>
+        <video controls width="250">
+            <source src="/puppies.mp4" type="video/mp4">
+        </video>
+
+        <h2>Template</h2>
+        <p>This one won't do anything yet, since Javascript isn't enabled.</p>
+        <template>
+            <picture>
+                <source srcset="/temporary_media.jpg" media="(orientation: portrait)">
+                <img src="/temporary_media.jpg" alt="Placeholder Surfer">
+            </picture>
+            <h2>Project Name</h2>
+            <b>Brief description of the project and what it does</b>
+            <p>Article Main Content Preview...<a href="/projects/project1.html"> read more</a></p>
+        </template>
+    </main>
+
+    <footer>
+        <h2>Nathan Reed</h2>
+        <nav>
+            <a href="/index.html">Home</a>
+            <a href="/projects.html">Projects</a>
+            <a href="/notes.html">Articles</a>
+            <a href="/about.html">About</a>
+            <a href="/contact.html">Contact</a>
+        </nav>
+        <hr>
+        <nav>
+            <a href="instagram.com">Instagram</a>
+            <a href="linkedin.com">Linkedin</a>
+        </nav>
+        <small>&copy; Nathan Reed, 2025</small>
+    </footer>
+</body>
+
+</html>
