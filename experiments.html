@@ -46,9 +46,12 @@
             sin/cos tables that you could run it on late 80s/early 90s hardware and it would impress folks.</p>
 
         <h2>Picture</h2>
+        <!-- The image is small, and the larger image isn't going to finish rendering on time. In lieu of a larger image,
+         please know that I would extend the srcset for a larger screen to use a larger image of the cube. The GPU is
+         struggling to render while I'm finalizing this repository. -->
         <picture>
             <source srcset="/res/img/blender-cube.png" media="(orientation: portrait)">
-            <img src="/res/img/blender-cube.png" alt="Cool Image of the Blender Default Cube I Made">
+            <img src="/res/img/blender-cube.png" alt="A white cube on top of a sea of purple. The image is created in Blender.">
         </picture>
         <p><code>&lt;picture&gt;</code> was already required for the main portion, so I don't know why I also need it here.</p>
 
@@ -65,7 +68,7 @@
         <template>
             <picture>
                 <source srcset="/res/img/blender-cube.png" media="(orientation: portrait)">
-                <img src="/res/img/blender-cube.png" alt="Cool Image of the Blender Default Cube I Made">
+                <img src="/res/img/blender-cube.png" alt="A white cube on top of a sea of purple. The image is created in Blender.">
             </picture>
             <h2>Project Name</h2>
             <b>Brief description of the project and what it does</b>
