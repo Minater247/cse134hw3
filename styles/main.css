@@ -10,6 +10,22 @@
     --card-color: #14141f;
 }
 
+@property --card-color {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: #2b2b36;
+}
+
+.card {
+    background: var(--card-color);
+    transition: --card-color .25s ease;
+}
+
+.card:hover {
+    --card-color: #353545;
+}
+
+
 
 * {
     margin: 0;
@@ -25,7 +41,7 @@ body {
 header {
     display: flex;
     justify-content: center;
-    
+
     background-color: #14141f;
     border-bottom: 2px #292934 solid;
 }
@@ -94,7 +110,7 @@ footer a {
 
     padding: calc(var(--pad-y) / 2) var(--pad-x);
     border-radius: var(--border-radius);
-    
+
     transition: color 0.25s ease;
 }
 
